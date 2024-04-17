@@ -47,3 +47,42 @@ console.log("********* next operation*******")
 const  myn2 = myArr.splice(1,3) // the difference between  splice and slice is splice will  take oyut the subarray and original array will change also  made 
 console.log("C",myArr);
 console.log(myn2);
+
+// array part 2
+
+const superfood = ["Berries", "Fish", "Leafy greens", "Nuts", "Olive oil", "Whole grains", "Yogurt"]
+const omega3food = ["Kiwifruit", "papaya", "avocados", "berries",  "oranges" ]
+
+// superfood.push(omega3food)  // array k andar array
+
+// console.log(superfood);
+// console.log(superfood[7][4]);  // oranges
+
+//superfood.concat(omega3food)  // this method returns a two array
+//const newfood = superfood.concat(omega3food)
+//console.log(newfood);   // now value in one array
+
+//spread - example having a glass drop it how it breaks like it spread
+
+const newfood = [...superfood, ...omega3food] // ... krke value or array add krlo
+console.log(newfood);
+
+
+//flat
+const anotherfood = [1,2,3,4,5,6,7,[6,7,[4,5]]]   // array k andr array waali situation
+const real_anotherfood = anotherfood.flat(Infinity);  //// aggr saari array k element ek single array me rkhne ho  flat use kro
+console.log(real_anotherfood)
+
+console.log(Array.isArray("shivani"));
+
+console.log(Array.from("shivani"));   // isne array k andr value li shivani usko  array bnaa diya
+
+console.log(Array.from({name : "shivani"}));    // interesting case: yeh empty array dega kyuki yeh name ko array me convert ni kr para
+
+let score1 = 100;
+let score2 = 200;
+let score3 = 300;
+
+console.log(Array.of(score1,score2,score3))   //array.of ne variab l;e me daal diya values ko
+
+
