@@ -1,5 +1,20 @@
 //PART 1 IN VIDEO OF FUNCTIONS AND PARAMETER IN JS
 
+function sayMyName(){
+    console.log("H");
+    console.log("I");
+    console.log("T");
+    console.log("E");
+    console.log("S");
+    console.log("H");
+}
+
+// sayMyName()
+
+// function addTwoNumbers(number1, number2){
+
+//     console.log(number1 + number2);
+// }
 
 function addnumbers(number1, number2){ //number1 and  number2 are parameters as in other language
     console.log(number1+number2)  
