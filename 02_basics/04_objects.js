@@ -70,3 +70,30 @@ console.log(Object.values(ttuser));
 console.log(Object.entries(ttuser));//[ [ 'id', '123abc' ], [ 'name', 'harman' ], [ 'isloggedin', true ] ]
 // to avoid if there is no value avoid to crash 
 console.log(ttuser.hasOwnProperty('isloggedout'))
+
+
+const data ={
+    dataname:"sh in shivani",
+    age: "25",
+    place: "noida"
+}
+
+//data.dataname instead of using  console.log(data.dataname);
+
+const {dataname : namey} = data  //destructure object: hame kisi bhi value ko destructure kr skte hai just like here we destrsucture dataname to namey
+
+//console.log(dataname);
+console.log(namey);
+
+//API : API IS nothing just a thing which deals with the values comes from backend
+
+//api define in json form look like object
+
+// {
+//     "name" : "shivani",
+//     "hobby" : "fashion",
+//     "skinshade":"03"
+
+// }
+
+
