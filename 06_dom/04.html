@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>javscript</li>
+    </ul>
+</body>
+<script>
+    //fuction by which we can add eleent in the list by creating element
+    function addlanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addlanguage("Rust")
+    addlanguage("typescript") // this methos is not optimized
+
+    //optimized approach by not traverse whole tree
+    function addliLnaguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+
+    }
+    addliLnaguage('golang')
+
+    //Edit
+    const secondlang = document.querySelector("li:nth-child(2)")
+    secondlang.innerHTML = "Mojo"
+
+    const newli = document.createElement('li');
+    //textcontent use instead of innerHTML
+    newli.textContent = "hojo"
+    //use of replacewith
+    secondlang.replaceWith(newli)
+
+    //edit use of outerHtml
+    const firstlang = document.querySelector("li:first-child")
+    firstlang.outerHTML = '<li>Typescript</li>'
+
+    //use of remove
+    const lastlang = document.querySelector('li:last-child')
+    lastlang.remove()
+</script>
+</html>
