@@ -15,8 +15,29 @@
     </div>
 </body>
 <script>
-   const parent = document.querySelector(".parent")
+   const parent = document.querySelector('.parent')
     console.log(parent);
-    console.log(parent.children);
+    console.log(parent.children[1].innerHTML);
+
+    for (let i = 0; i < parent.children.length; i++) {
+        console.log(parent.children[i].innerHTML);
+        
+    }
+    parent.children[1].style.color = "orange"
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild); // we are using  moving from parent to child
+
+    const day1 = document.querySelector('.day')
+    console.log(day1);
+
+    //how to jump on parent from child to parent traverse
+    console.log(day1.parentElement);
+    console.log(day1.nextElementSibling);
+
+    //ek parent ki kitni nodes hai ??
+
+    //discussion about child nodes 
+    console.log("NODES :", parent.childNodes);
+
 </script>
 </html>
