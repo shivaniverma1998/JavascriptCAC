@@ -15,7 +15,7 @@
     function addlanguage(langName){
         const li = document.createElement('li');
         li.innerHTML = `${langName}`
-        document.querySelector('.language').appendChild(li)
+        document.querySelector('.language').appendChild(li)  // by using appendchild() method we actually adding list bby traversing a whole ttree and then append itt so its take long time 
     }
     addlanguage("Rust")
     addlanguage("typescript") // this methos is not optimized
@@ -23,13 +23,13 @@
     //optimized approach by not traverse whole tree
     function addliLnaguage(langName){
         const li = document.createElement('li');
-        li.appendChild(document.createTextNode(langName))
-        document.querySelector('.language').appendChild(li)
+        li.appendChild(document.createTextNode(langName))    /**different apporach*/
+        document.querySelector('.language').appendChild(li) 
 
     }
     addliLnaguage('golang')
 
-    //Edit
+    //Edit value 
     const secondlang = document.querySelector("li:nth-child(2)")
     secondlang.innerHTML = "Mojo"
 
