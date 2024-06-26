@@ -1,0 +1,63 @@
+<!-- learn about what is API how to read api through JSON FORMATTER 
+
+LARN ABOUT AJAX AND ITS XMLTttpRequest.readyState: 
+1. unsent 
+2. opened
+3.headers_recieved
+4.loading
+5.done -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .card {
+            /* Add shadows to create the "card" effect */
+            width: 500px;
+            height: 650px;
+            box-shadow: 0 4px 8px 0 rgba(188, 241, 186, 0.2);
+            transition: 0.3s;
+            background-color:#a86990;;
+          }
+        .container {
+            padding: 2px 16px;
+          }
+          </style>
+</head>
+<body style="background-color: #212121;">
+
+    <div class="card">
+        <img src="img_avatar.png" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h4>John Doe</h4>
+          <p>Architect & Engineer</p>
+        </div>
+      </div>
+    <!-- 0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete. -->
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/shivaniverma1998'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {    //readystate tell the current state 
+            const data = JSON.parse(this.responseText)
+            console.log(typeof data);
+            console.log(data.followers);
+            document.querySelector(".card img").setAttribute("src" , `${data.avatar_url}`);
+            document.querySelector("h4").innerHTML = `${data.name} , Followers : ${data.followers}`;
+            document.querySelector("h4").style.fontWeight = `bold`;
+            document.querySelector("p").innerHTML = `${data.bio}  ${data.blog}`
+        }
+    }
+    xhr.send();
+</script>
+</html>

@@ -4,6 +4,7 @@
 //     const hex = '0123456789ABCDEF';
 //     let  color  = '#';
 
+
 //     for (let i = 0; i < 6; i++) {
 //         color += hex[Math.floor(Math.random() * 16 )];
         
@@ -48,7 +49,7 @@ const randomColor = function () {
   let intervalId;
   const startChangingColor = function () {
     if (!intervalId) {
-      intervalId = setInterval(changeBgColor, 1000);
+      intervalId = setInterval(changeBgColor, 500);
     }
   
     function changeBgColor() {
