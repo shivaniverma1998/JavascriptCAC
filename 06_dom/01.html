@@ -1,3 +1,43 @@
+<!-- topics -->
+ <!-- WE Can do DOM manupulation in html documentt 
+ mehod like - document.getElementById
+ innerHTML
+ HTMLCollection , node collection  & array are different
+textContent (can show all hdden content ) VS innerText (it cann show only vvisibble content )
+innerHTML - it shows all the content included ttag
+
+queryselecttorrs-----
+it is used to select values , ids, class, objects of httml
+queryslectorrall is basically used to slelect many values at a time unlike queryseletor all
+ NodeList is look like array but not array (can do operattion just like we do on array)
+how to do operatio on nodeList : 
+tempList --: NodeList(3) [Li, Li , Li]
+tempList.style.color = "red"    (WRRONGG WAY)
+tempList[0].style.color = "red"     (RIGHT WAY)
+
+how to apply forEachloop on NodeList(tempLiList)
+
+tempLiList.forEach(ffuncttion (l) {
+    l.style.backggroundColor = 'red'  // tthis is the way tto manupulatte nodelist
+})
+
+document.ggetElementByClassName('list-item')   (list-item is a class)
+we get HTTMLCollection(4) [li.list-item, li.list-item, li.list-item, ]
+*** we cant apply forEach() on HTMLCollecttion
+
+how to converrtt HTTMLCollection  ------
+const newarrray = Array.from(tempClassList)     //tempClassList is a HTTMLCollection
+now newarray is actt as Array
+
+by queryslector all we can manupulate  id, class , values  through foreach  ffuncttion
+
+myH2.forEach(uncion (h) {
+    h.style.color = 'red';
+    h.style.backoundColor = 'blue';
+    h.style.padding = '15px';
+    h.innerText = "newvalue"   // it will change all H2 heading with name newvalue
+}) -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,3 +61,4 @@
 </body>
 
 </html>
+

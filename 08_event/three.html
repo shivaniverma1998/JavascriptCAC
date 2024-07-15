@@ -28,23 +28,28 @@ for asynchronous concept check image <img src="async concept.png"> -->
 </head>
 <body>
     <h1>Shivani with javascript</h1>
+    <button id="start">Start</button>
     <button id="stop">Stop</button>
 </body>
 <script>
-    const sayShivani = function() {
-    console.log("SHIVANI its chai time");
-    }
+    // const sayDate = function(){
+    //     console.log("shivani writes code", Date.now());
+    // }
 
-    const changeText = function(){
-        document.querySelector('h1').innerHTML = "shivani is hunting for job while preparing for javascript"
-        
-    }
-    const changeme = setTimeout(changeText, 2000) // this is start of setTimeout
+    // setInterval(sayDate, 1000)
+    
+    //const intervalId = setInterval(sayDate, 1000, "Hi There ...!!!")
+    //clearInterval(intervalId)
+    //setinterval is a handler  & clearinterval is both type of function
+    document.querySelector("#start").addEventListener("click", function () {
+        const start = function () {
+          console.log("shivani writes code", Date.now());
+        };
+        const toStop = setInterval(start, 1000, (click = start));
 
-     // this is the end of settimeout
-    document.querySelector('#stop').addEventListener('click', function() {
-        clearTimeout(changeme)
-        console.log("STOPPED")
-    })
+        document.querySelector("#stop").addEventListener("click", function () {
+          clearInterval(toStop);
+        });
+      });
 </script>
 </html>
